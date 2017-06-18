@@ -1,5 +1,5 @@
 {
-  "name": "File Metadata Microservice",
+  "name": "fff",
   "version": "0.0.1",
   "description": "Returns metadata about a file",
   "main": "server.js",
