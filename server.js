@@ -5,6 +5,7 @@
 var express = require('express');
 var multer = require('multer');
 var app = express();
+var exec = require('child_process').exec;
 
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -19,6 +20,7 @@ app.get('/', function (request, response) {
 
 app.post('/get-file-size', multer({dest: 'public/'}).single('file'), function (request, response) {
   response.json({size: request.file.size});
+  exec('rm -rf ./public/' + request.file.filename);
 });
 
 // listen for requests :)
